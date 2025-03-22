@@ -21,10 +21,13 @@
       });
 
       app.use(cors({
-        origin: ["https://taskmasterweb.vercel.app/","http://localhost:5173"],
-        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-        credentials: true
+        origin: ["https://taskmasterweb.vercel.app", "http://localhost:5173"], 
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], 
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true,
+        preflightContinue: false,
       }));
+      
 
 
       app.use("/api/auth", authRoutes);
