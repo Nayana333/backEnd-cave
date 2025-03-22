@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 import { Request } from "express";
-import { Otp } from "../model/otp"; 
+import { Otp } from "../model/otp";
 
 const sendVerifyMail = async (req: Request, name: string, email: string) => {
   try {
@@ -10,7 +10,7 @@ const sendVerifyMail = async (req: Request, name: string, email: string) => {
       throw new Error("No OTP found for this email.");
     }
 
-    const otp = otpRecord.otp; 
+    const otp = otpRecord.otp;
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
